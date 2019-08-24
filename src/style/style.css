@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Monoton&display=swap');
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.fighters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    flex-wrap: wrap;
+    padding: 0 15px;
+}
+
+.fighter {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+}
+
+.fighter:hover {
+    box-shadow: 0 0 50px 10px rgba(0,0,0,0.06);
+    cursor: pointer;
+}
+
+.name {
+    align-self: center;
+    font-size: 21px;
+    margin-top: 20px;
+}
+
+.fighter-image {
+    height: 180px;
+    cursor: pointer;
+}
+
+.delete-fighter {
+    position: absolute;
+    background-color: inherit;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    top: -7px;
+    right: -7px;
+    cursor: progress;
+}
+
+.fighter:hover .delete-fighter {
+    background-color: red;
+}
+
+.delete-fighter > p {
+    text-align: center;
+    color: white;
+    margin: 0;
+    margin-top: -3px;
+}
+
+#loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.7);
+    visibility: hidden;
+}
+
+.fighter-details {
+    position: fixed;
+    background-color: red;
+    height: 40%;
+    width: 30%;
+    top: 30%;
+    left: 35%;
+    box-shadow: 0 0 30px 5px rgba(153, 0, 0, 0.836);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fighter-details_name {
+    text-align: center;
+    color: red;
+    background-color: black;
+    font-size: 35px;
+    margin: 15px 0;
+}
+
+.fighter-details_defense,
+.fighter-details_attack,
+.fighter-details_health {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5px;
+}
+
+.saves {
+    cursor: pointer;
+    background-color: black;
+    color: red;
+    margin-top: 10px;
+}
+
+.start-game {
+    background-color: red;
+    width: 75%;
+    height: 50px;
+    font-size: 25px;
+    border-radius: 15px;
+    font-family: 'Fredericka the Great', cursive;
+    cursor: pointer;
+}
+
+.game-window {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.973);
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    user-select: none;
+}
+
+.game-instruction {
+    font-family: 'Fredericka the Great', cursive;
+    text-align: center;
+    width: 100%;
+    color: #b9b5b5;
+    font-size: 35px;
+    margin: 0;
+}
+
+.fighter-left,
+.fighter-right {
+    height: 75%;
+    width: 45%;
+    background-color: #b9b5b5;
+    border-radius: 25px;
+    box-shadow: 0 0 15px 5px rgb(255, 0, 0);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 2s;
+    user-select: none;
+}
+
+.fighter-left h2,
+.fighter-right h2 {
+    color: red;
+    font-size: 35px;
+}
+
+.fighter-left div,
+.fighter-right div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-family: 'Fredericka the Great', cursive;
+}
+
+.fighter-left div p,
+.fighter-right div p {
+    margin: 20px 50px;
+    font-size: 25px;
+}
+
+.fighter-left:active,
+.fighter-right:active {
+    background-color: darkred;
+    transition: 0s;
+}
+
+.fighter-left:active img,
+.fighter-right:active img {
+    transform: scale(0.5, 0.5);
+}
+
+.fighter-left:active .level-health p,
+.fighter-right:active .level-health p {
+    color: red;
+    transition: 0s;
+}
+
+.level-health p {
+    color: rgb(0, 255, 0);
+    font-family: 'Monoton', cursive;
+    transition: 5s;
+}
+
+.ready-fighters {
+    height: 40%;
+    cursor: pointer;
+}
+
+.game-window > h2 {
+    color: red;
+    font-size: 4rem;
+    text-align: center;
+    width: 100%;
+    margin: 30px 0;
+}
+
+.game-window > p {
+    color: rgb(0, 255, 0);
+    font-size: 3rem;
+    text-align: center;
+    width: 100%;
+    margin: 30px 0;
+}
+
+.game-window > button {
+    background-color: white;
+    font-size: 2rem;
+}
+
+.selected-fighter {
+    width: 35%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.selected-fighter p {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 35px;
+    color: black;
+}
+
+.selected-fighter_img {
+    height: 100px;
+}
